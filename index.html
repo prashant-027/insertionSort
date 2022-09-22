@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+
+
+    }
+
+    section {
+
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+    }
+
+    .comment {
+        color: rgb(119, 10, 191);
+    }
+
+    .main1,
+    .main2,
+    .main3,
+    .main4 {
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    #code1,
+    #code2,
+    #code3,
+    #code4 {
+        margin-left: 1em;
+    }
+
+    .contain1,
+    .contain2,
+    .contain3,
+    .contain4 {
+
+        display: flex;
+        flex-direction: column;
+        margin: 1px 0px;
+
+
+
+    }
+
+    .btn1,
+    .btn2,
+    .btn3,
+    .btn4 {
+        display: flex;
+        width: 50vw;
+    }
+
+    .code-btn1,
+    .code-btn2,
+    .code-btn3,
+    .code-btn4 {
+
+        padding: 10px 46%;
+        background-color: #111133;
+        color: #fff;
+        font-size: 15px;
+        border: none;
+        border-right: 1px solid #fff;
+
+
+    }
+
+    .compiler-btn1,
+    .compiler-btn2,
+    .compiler-btn3,
+    .compiler-btn4 {
+
+        padding: 10px 45%;
+        background-color: #111133;
+        color: #fff;
+        text-align: center;
+        font-size: 15px;
+        border: none;
+
+    }
+
+    iframe {
+        display: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .code-btn1,
+        .code-btn2,
+        .code-btn3,
+        .code-btn4 {
+
+            padding: 10px 40%;
+            background-color: #111133;
+            color: #fff;
+            font-size: 15px;
+            border-right: 1px solid #fff;
+
+
+        }
+
+        .compiler-btn1,
+        .compiler-btn2,
+        .compiler-btn3,
+        .compiler-btn4 {
+
+            padding: 10px 40%;
+            background-color: #111133;
+            color: #fff;
+            font-size: 15px;
+            border: none;
+
+        }
+    }
+
+    @media only screen and (max-width: 490px) {}
+</style>
+
+<body>
+    <!-- NEW SECTION FOR C FOR INSERTION SORT -->
+    <section>
+
+        <div class="main1">
+            <div class="btn1">
+                <button class="code-btn1" onclick="code1()">C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button class=" compiler-btn1" onclick="compiler1()">Compiler</button>
+            </div>
+
+            <div class="contain1">
+                <p id="code1">
+                    <strong>
+                        #include &lt;stdio.h&gt;<br>
+                        <br>
+                        <span class="comment">// Function to print an array</span><br>
+                        void printArray(int array[], int size) {<br>
+                        &nbsp;&nbsp;for (int i = 0; i &lt; size; i++) {<br>
+                        &nbsp;&nbsp;&nbsp;printf("%d ", array[i]);<br>
+                        &nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;printf("\n");<br>
+                        }<br>
+                        <br>
+                        void insertionSort(int array[], int size) {<br>
+                        &nbsp;&nbsp;for (int step = 1; step &lt; size; step++) {<br>
+                        &nbsp;&nbsp;&nbsp;int key = array[step];<br>
+                        &nbsp;&nbsp;&nbsp;int j = step - 1;<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;<span class="comment">// Compare key with each element on the left of it until
+                            an element smaller than it is found.</span><br>
+                        &nbsp;&nbsp;&nbsp;<span class="comment">// For descending order, change key&lt;array[j] to
+                            key&gt;
+                            array[j].</span><br>
+                        &nbsp;&nbsp;&nbsp;while (key &lt; array[j] && j &gt;= 0) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = array[j];<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;--j;<br>
+                        &nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;&nbsp;array[j + 1] = key;<br>
+                        &nbsp;&nbsp;}<br>
+                        }<br>
+                        <br>
+                        <span class="comment">// Driver code</span><br>
+                        int main() {<br>
+                        &nbsp;&nbsp;int data[] = {9, 5, 1, 4, 3};<br>
+                        &nbsp;&nbsp;int size = sizeof(data) / sizeof(data[0]);<br>
+                        &nbsp;&nbsp;insertionSort(data, size);<br>
+                        &nbsp;&nbsp;printf("Sorted array in ascending order:\n");<br>
+                        &nbsp;&nbsp;printArray(data, size);<br>
+                        }<br>
+                        <br>
+                    </strong>
+                </p>
+
+                <iframe id="frame1" width="100%" height="100%" src="https://tio.run/##S9ZNT07@DwQA" title="C Compiler"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION FOR C++ FOR INSERTION SORT -->
+    <section>
+
+        <div class="main2">
+            <div class="btn2">
+                <button class="code-btn2" onclick="code2()">C++&nbsp;&nbsp;</button>
+                <button class=" compiler-btn2" onclick="compiler2()">Compiler</button>
+            </div>
+
+            <div class="contain2">
+                <p id="code2">
+                    <strong>
+                        #include <iostream><br>
+                            using namespace std;<br>
+                            <br>
+                            <span class="comment">// Function to print an array</span><br>
+                            void printArray(int array[], int size) {<br>
+                            &nbsp;&nbsp;for (int i = 0; i &lt; size; i++) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;cout &lt;&lt; array[i] &lt;&lt; " ";<br>
+                            &nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp; cout &lt;&lt; endl;<br>
+                            }<br>
+                            <br>
+                            void insertionSort(int array[], int size) {<br>
+                            &nbsp;&nbsp;for (int step = 1; step &lt; size; step++) {<br>
+                            &nbsp;&nbsp;&nbsp;int key = array[step];<br>
+                            &nbsp;&nbsp;&nbsp;int j = step - 1;<br>
+                            <br>
+                            &nbsp;&nbsp;&nbsp;<span class="comment">// Compare key with each element on the left of it
+                                until an element smaller than it is found.</span><br>
+                            &nbsp;&nbsp;&nbsp;<span class="comment">// For descending order, change key&lt;array[j] to
+                                key&gt;array[j].</span><br>
+                            &nbsp;&nbsp;&nbsp;while (key &lt; array[j] && j &gt;= 0) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = array[j];<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;--j;<br>
+                            &nbsp;&nbsp;&nbsp;}<br>
+                            &nbsp;&nbsp;&nbsp;array[j + 1] = key;<br>
+                            &nbsp;&nbsp;}<br>
+                            }<br>
+                            <br>
+                            <span class="comment">// Driver code</span><br>
+                            int main() {<br>
+                            &nbsp;&nbsp;int data[] = {9, 5, 1, 4, 3};<br>
+                            &nbsp;&nbsp;int size = sizeof(data) / sizeof(data[0]);<br>
+                            &nbsp;&nbsp;insertionSort(data, size);<br>
+                            &nbsp;&nbsp;cout &lt;&lt; "Sorted array in ascending order:\n";<br>
+                            &nbsp;&nbsp;printArray(data, size);<br>
+                            }<br>
+                            <br>
+                    </strong>
+                </p>
+
+                <iframe id="frame2" width="100%" height="100%" src="https://tio.run/#cpp-gcc" title="C++ Compiler"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION FOR JAVA FOR INSERTION SORT-->
+    <section>
+        <div class="main3">
+            <div class="btn3">
+                <button class="code-btn3" onclick="code3()">Java</button>
+                <button class=" compiler-btn3" onclick="compiler3()">Compiler</button>
+            </div>
+
+            <div class="contain3">
+                <p id="code3">
+                    <strong>
+                        import java.util.Arrays;<br>
+                        <br>
+                        class InsertionSort {<br>
+                        <br>
+                        &nbsp;&nbsp;void insertionSort(int array[]) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;int size = array.length;<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;for (int step = 1; step &lt; size; step++) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int key = array[step];<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int j = step - 1;<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Compare key with each element on the left
+                            of it until an element smaller than it is found.</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// For descending order, change
+                            key&lt;array[j] to key&gt;array[j].</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (j &gt;= 0 && key &lt; array[j]) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = array[j];<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--j;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// Place key at after the element just
+                            smaller than it.</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = key;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        }<br>
+                        <br>
+                        <span class="comment">// Driver code</span><br>
+                        public static void main(String args[]) {<br>
+                        &nbsp;&nbsp;int[] data = { 9, 5, 1, 4, 3 };<br>
+                        &nbsp;&nbsp;InsertionSort is = new InsertionSort();<br>
+                        &nbsp;&nbsp;is.insertionSort(data);<br>
+                        &nbsp;&nbsp;System.out.println("Sorted Array in Ascending Order: ");<br>
+                        &nbsp;&nbsp;System.out.println(Arrays.toString(data));<br>
+                        &nbsp;&nbsp;}<br>
+                        }<br>
+                        <br>
+                    </strong>
+                </p>
+
+                <iframe id=" frame3" width="100%" height="100%" src="https://tio.run/##y0osS9TNSsn@DwQA"
+                    title="JAVA Compiler" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- NEW SECTION FOR PYTHON FOR SELECTION SORT-->
+    <section>
+
+        <div class="main4">
+            <div class="btn4">
+                <button class="code-btn4" onclick="code4()">Py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                <button class=" compiler-btn4" onclick="compiler4()">Compiler</button>
+            </div>
+
+            <div class="contain4">
+                <p id="code4">
+                    <strong>
+                        def insertionSort(array):<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;for step in range(1, len(array)):<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key = array[step]<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = step - 1<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Compare key with each element on the left
+                            of it until an element smaller
+                            than it is found.</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># For descending order, change
+                            key&lt;array[j] to
+                            key&gt;array[j].</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while j &gt;= 0 and key &lt; array[j]:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = array[j]<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = j - 1<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Place key at after the element just
+                            smaller than it.</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = key<br>
+                        <br>
+
+                        data = [9, 5, 1, 4, 3]<br>
+                        insertionSort(data)<br>
+                        print('Sorted Array in Ascending Order:')<br>
+                        print(data)<br>
+                        <br>
+                    </strong>
+                </p>
+
+                <iframe id="frame4" width="100%" height="100%" src="https://tio.run/##K6gsycjPM/4PBAA"
+                    title="PYTHON Compiler" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <script>
+        function compiler1() {
+
+            document.getElementById("code1").style.display = "none";
+            document.getElementById("frame1").style.display = "block";
+            document.getElementById("frame1").style.height = "100vh";
+        }
+        function code1() {
+
+            document.getElementById("code1").style.display = "block";
+            document.getElementById("frame1").style.display = "none";
+        }
+        function compiler2() {
+
+            document.getElementById("code2").style.display = "none";
+            document.getElementById("frame2").style.display = "block";
+            document.getElementById("frame2").style.height = "100vh";
+        }
+        function code2() {
+
+            document.getElementById("code2").style.display = "block";
+            document.getElementById("frame2").style.display = "none";
+        }
+        function compiler3() {
+
+            document.getElementById("code3").style.display = "none";
+            document.getElementById("frame3").style.display = "block";
+            document.getElementById("frame3").style.height = "100vh";
+        }
+        function code3() {
+
+            document.getElementById("code3").style.display = "block";
+            document.getElementById("frame3").style.display = "none";
+        }
+        function compiler4() {
+
+            document.getElementById("code4").style.display = "none";
+            document.getElementById("frame4").style.display = "block";
+            document.getElementById("frame4").style.height = "100vh";
+        }
+        function code4() {
+
+            document.getElementById("code4").style.display = "block";
+            document.getElementById("frame4").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
